@@ -15,12 +15,12 @@ class GUI:
         self.button1 = None
         self.button2 = None
         self.button3 = None
-        
+        self.buttonadd = None
     def gera_janela(self):
 
         root = ctk.CTk()
         root.title("Knoledge Graphs")
-        root.geometry("400x300")
+        root.geometry("600x600")
         root.resizable(False, False)
         # Cria um frame para centralizar o conteúdo
         frame = ctk.CTkFrame(root, corner_radius=10)
@@ -41,9 +41,9 @@ class GUI:
         self.button2 = ctk.CTkButton(frame, text="Ver grafo", command=buttons.on_button_click)
         entrada = ctk.CTkEntry(frame, width=250)
         self.button3 = ctk.CTkButton(frame, text="Aplicar filtro")
-        
-        self.button1.configure(command =lambda botao=self.button1, grafo = self.grafo, botao2 = self.button2, entrada = entrada, botao3 =self.button3  :  
-                               buttons.on_button_click(botao, grafo, botao2, entrada, botao3))
+        self.buttonadd = ctk.CTkButton(frame, text="Adicionar relação")
+        self.button1.configure(command =lambda botao=self.button1, grafo = self.grafo, botao2 = self.button2, entrada = entrada, botao3 =self.button3, botao4 = self.buttonadd  :  
+                               buttons.on_button_click(botao, grafo, botao2, entrada, botao3, botao4))
         
         
 
@@ -58,6 +58,7 @@ class GUI:
         
         #entrada.pack(pady=20)
         #self.button3.pack(pady=10)
+    
     def loop(self):
         self.root.mainloop()
 def main():

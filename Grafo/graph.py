@@ -41,7 +41,7 @@ class Graph:
     def filter_graph(self, keyword = None):
         if keyword != None:
             new_graph = self.grafo_original.query(f'source == "{keyword}" or target == "{keyword}" or edge == "{keyword}"')
-            print(new_graph)
+            print("filtrado")
             self.grafo = new_graph
         else:
             self.grafo = self.grafo_original
@@ -52,11 +52,12 @@ class Graph:
         df2 = self.grafo_original._append(dataframe_cell, ignore_index=True)
   
         self.grafo_original = df2
+        self.grafo = self.grafo_original
     def draw(self, filter = None):
         
         if filter != None or self.grafo.empty:
+            print("FILTRANDO")
             self.filter_graph(filter)
-        print(self.grafo)
         G=nx.from_pandas_edgelist(self.grafo, "source", "target", 
                             edge_attr="edge", create_using=nx.MultiDiGraph())
         plt.figure(figsize=(12,12))
