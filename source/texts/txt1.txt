@@ -1,0 +1,5 @@
+O aprendizado por reforço (RL) é a parte do ecossistema de aprendizado de máquina em que o agente aprende interagindo com o ambiente para obter a estratégia ideal para atingir as metas. Isso é bem diferente dos algoritmos de aprendizado de máquina supervisionados, em que precisamos ingerir e processar esses dados. O aprendizado por reforço não requer dados. Em vez disso, ele aprende com o ambiente e o sistema de recompensas para tomar decisões melhores.
+
+Por exemplo, no videogame Mario, se um personagem realizar uma ação aleatória (por exemplo, mover-se para a esquerda), com base nessa ação, ele poderá receber uma recompensa. Depois de realizar a ação, o agente (Mario) fica em um novo estado, e o processo se repete até que o personagem do jogo chegue ao final da fase ou morra. 
+
+Esse episódio se repetirá várias vezes até que Mario aprenda a navegar pelo ambiente maximizando as recompensas.
